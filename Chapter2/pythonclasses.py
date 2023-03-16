@@ -19,6 +19,7 @@ pnt1 = Point()
 pnt2 = Point()
 
 pnt1.reset()
+# initializing/constructing an object
 pnt2.move(5, 0)
 print(pnt2.calculateDistance(pnt1))
 
