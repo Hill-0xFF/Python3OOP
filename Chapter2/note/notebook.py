@@ -94,3 +94,9 @@ class Notebook:
     for this job.
     '''
     self._findNote(note_id).memo = memo
+
+  def new_modifyTags(self, note_id, tags):
+    '''
+    Using proper find method to edit tags
+    '''
+    self._findNote(note_id).tags = tags

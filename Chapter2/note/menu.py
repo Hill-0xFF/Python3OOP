@@ -63,13 +63,16 @@ class Menu:
     memo = input ("Enter a memo: ")
     tags = input("Enter tags: ")
     if memo:
-      self.notebook.modifyMemo(id, memo)
+      # self.notebook.modifyMemo(id, memo)
+      self.notebook.new_modifyMemo(id, memo)
     
     if tags: 
-      self.notebook.modifyTags(id, tags)
+      # self.notebook.modifyTags(id, tags)
+      self.notebook.new_modifyTags(id, tags)
 
   def Quit(self):
     print("\n\t\t\tThanks for using Notebook™")
+    sys.exit(0)
 
 if __name__ == "__main__":
   Menu().run()
