@@ -76,3 +76,21 @@ class Notebook:
     Find all notes that match the given filter
     '''
     return [note for note in self.notes if note.match(filter)]
+
+  def _findNote(self, note_id):
+    '''
+    Better way to find notes, isolating this responsability
+    to it's own function.
+    '''
+    for note in self.notes:
+      if note.id == note_id:
+        return note
+    return None
+
+  def new_modifyMemo(self, note_id, memo):
+    '''
+    Just modify the memo contents.
+    Still needs to search, but using a proper function
+    for this job.
+    '''
+    self._findNote(note_id).memo = memo
