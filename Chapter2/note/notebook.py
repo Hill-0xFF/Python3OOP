@@ -31,3 +31,48 @@ class Note:
     and tags.
     '''
     return filter in self.memo or filter in self.tags
+
+
+class Notebook:
+  '''
+  Represent a collection of notes that can be tagged,
+  modified and searched.
+  '''
+
+  def __init__(self):
+    '''
+    Initialize a notebook with an empty list
+    '''
+    self.notes = []
+
+  def newNote(self, memo, tags=''):
+    '''
+    Create a new note
+    '''
+    self.notes.append(Note(memo, tags))
+
+  def modifyMemo(self, note_id, memo):
+    '''
+    Find the note with given id and
+    change its contents.
+    '''
+    for note in self.notes:
+      if note.id == note_id:
+        note.memo = memo
+        break
+
+  def modifyTags(self, note_id, tags):
+    '''
+    Find the note with given id and
+    modify its contents.
+    '''
+    for note in self.notes:
+      if note.id == note_id:
+        note.tags = tags
+        break
+
+  def searchNote(self, filter):
+    '''
+    Find all notes that match the given filter
+    '''
+    return [note for note in self.notes if note.match(filter)]
