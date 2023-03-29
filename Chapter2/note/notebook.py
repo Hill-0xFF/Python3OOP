@@ -83,7 +83,7 @@ class Notebook:
     to it's own function.
     '''
     for note in self.notes:
-      if note.id == note_id:
+      if str(note.id) == str(note_id):
         return note
     return None
 
