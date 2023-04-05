@@ -18,6 +18,18 @@ class Contact:
     self.email = email
     Contact.allContacts.append(self)
 
+# class Friend(Contact):
+#   def __init__(self, name, email, phone):
+#     self.name = name
+#     self.email = email
+#     self.phone = phone
+# Not the best way to create a class inherited from Contact class
+
+class Friend(Contact):
+  def __init__(self, name, email, phone):
+    super().__init__(name, email)
+    self.phone = phone
+
 class Supplier(Contact):
   def order(self, order):
     print("If this were a real system we would send"
